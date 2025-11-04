@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Services</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0 url('premium-logo.png') no-repeat center center;
+  background-size: contain;
+  background-attachment: fixed;
+  direction: rtl;
+  text-align: right;
+}
+header { background: #d32f2f; color: white; padding: 15px; text-align: center; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 5px; }
+nav a { color: white; margin: 5px 10px; text-decoration: none; font-weight: bold; cursor: pointer; font-size: 1em; }
+section { padding: 15px; display: none; }
+section.active { display: block; }
+.social-icons { margin-top: 10px; text-align: center; }
+.social-icons a { margin: 0 5px; color: white; text-decoration: none; font-weight: bold; font-size: 1em; }
+ul { list-style: none; padding: 0; }
+li { margin: 8px 0; font-size: 1em; }
+li span { font-weight: bold; margin-left: 5px; }
+a.button { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #d32f2f; color: white; text-decoration: none; border-radius: 5px; font-size: 1em; }
+a.button:hover { background: #b71c1c; }
+#rating span { cursor: pointer; font-size: 1.8em; }
+textarea, input[type=text] { width: 95%; margin-top:5px; font-size: 1em; padding: 5px; }
+button { margin-top: 5px; padding: 8px 12px; cursor: pointer; font-size: 1em; }
+footer { text-align: center; padding: 10px; font-size: 0.9em; background: #d32f2f; color: white; margin-top: 15px; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Premium Services</h1>
+<nav>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('details')">تفاصيل الشركة</a>
+<a onclick="showSection('updates')">العروض / Updates</a>
+</nav>
+<div class="social-icons">
+<a href="https://wa.me/96179338815" target="_blank">واتساب</a> | 
+<a href="https://facebook.com/PremiumServices" target="_blank">فيسبوك</a> | 
+<a href="http://instagram.com/pre_miumservices" target="_blank">إنستغرام</a>
+</div>
+</header>
+
+<!-- الصفحة الرئيسية -->
+<section id="home" class="active">
+<h2>شركة Premium Services</h2>
+<p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة، مع فريق عمل محترف، والشركة مؤهل لتأمين عاملات وعاملين متخصصين في تنظيف المنازل والمكاتب والمؤسسات بأعلى معايير الجودة والموثوقية.</p>
+<p>نحرص على تلبية احتياجات عملائنا بدقة وسرعة، مع التركيز على الاحتراف، الأمانة، والنظافة المثالية في كل مهمة نقوم بها.</p>
+<p>هدفنا هو توفير راحة بالك، وخدمة راقية تعكس اسمنا — <strong>Premium</strong> — في كل تفصيل.</p>
+<p>🏢 <strong>شركة مسجلة وقانونية:</strong> مرخصة من قبل الحكومة وبلدية طرابلس.</p>
+<p>⏰ نقدم خدماتنا على مدار 24 ساعة، مع جدول زمني مخصص لكل زبون حسب رغبته وراحته.</p>
+<p>📞 <strong>رقم مدير العمليات:</strong> <a href="https://wa.me/96171418383" target="_blank">71418383 (واتساب)</a></p>
+<p>📞 <strong>المدير المباشر للشركة:</strong> <a href="https://wa.me/9613276605" target="_blank">03276605 (واتساب)</a></p>
+<p>📍 <strong>تفاصيل العنوان:</strong> طرابلس / شارع فؤاد الملا / جنب مستشفى الملا</p>
+</section>
+
+<!-- قسم التفاصيل الاحترافي -->
+<section id="details">
+<h2>تفاصيل عمل الشركة</h2>
+<ul>
+<li>🧹 <span>تنظيف البلاط المتصدئ:</span> إزالة الصدأ والبقع الصعبة واستعادة نظافة البلاط.</li>
+<li>🧼 <span>تنظيف السجاد:</span> إزالة البقع والأتربة باستخدام طرق حديثة وآمنة.</li>
+<li>🪟 <span>تنظيف المينيوم:</span> تنظيف نوافذ وأبواب المينيوم ليصبح كالزجاج تمامًا.</li>
+<li>☀️ <span>تنظيف الطاقة الشمسية:</span> تنظيف الألواح الشمسية وإزالة الغبار لتحسين الأداء.</li>
+<li>🦟 <span>رش المبيدات:</span> مكافحة الحشرات بطريقة آمنة وفعالة.</li>
+<li>🌿 <span>تعشيب وقص الحدائق:</span> تنسيق الحدائق والعناية بالنباتات لتصبح المساحات خضراء وجميلة.</li>
+<li>🛋️ <span>تعقيم وتنظيف المفروشات:</span> تنظيف شامل وتعقيم جميع أنواع المفروشات لضمان بيئة صحية وآمنة.</li>
+</ul>
+</section>
+
+<!-- قسم العروض -->
+<section id="updates">
+<h2>العروض والتحديثات / Updates</h2>
+<p>💸 خصومات عند زيارة ٤ مرات في الشهر</p>
+<p>💰 أسعار الخدمة:</p>
+<ul>
+<li>🏠 تنظيف شامل للبيت من 0 متر مربع إلى 100 متر مربع → 25$</li>
+<li>🏠 من 120 متر مربع وما فوق → 35$</li>
+</ul>
+<p>🏭 تنظيف المستودعات:</p>
+<ul>
+<li>🧹 تنظيف عادي → 1.5$ لكل متر مربع</li>
+<li>🧹 تنظيف مع نقل الردم أو الأثاث القديم أو المخلفات → 2.5$ لكل متر مربع</li>
+</ul>
+<p>☀️ تنظيف الطاقة الشمسية:</p>
+<ul>
+<li>🔆 تبدأ من 20$ وما فوق حسب عدد ألواح الطاقة وحسب ارتفاعها</li>
+</ul>
+<p>🧼 تنظيف السجاد:</p>
+<ul>
+<li>🧹 تنظيف داخل البيت باستخدام المكينات المخصصة → السعر حسب كل سجادة وكبرها، يبدأ من 1.5$ لكل متر مربع</li>
+</ul>
+<p>🛋️ تنظيف وتعقيم الفرش بالبخار:</p>
+<ul>
+<li>🧽 يبدأ من 10$ حسب كمية الفرش التي تحتاج تنظيف وتعقيم</li>
+</ul>
+
+<!-- تقييم الزبون -->
+<p>📝 تقييم الزبون:</p>
+<div id="rating" style="font-size: 1.8em;">
+<span onclick="increment('happy')">🙂 <span id="happyCount">0</span></span>
+&nbsp;&nbsp;
+<span onclick="increment('neutral')">😐 <span id="neutralCount">0</span></span>
+&nbsp;&nbsp;
+<span onclick="increment('sad')">☹️ <span id="sadCount">0</span></span>
+</div>
+
+<!-- اقتراحات الزبائن -->
+<p>💬 اقتراحات الزبائن:</p>
+<input type="text" id="customerName" placeholder="اسمك" /><br>
+<textarea id="customerInput" rows="3" placeholder="اكتب اقتراحك هنا..."></textarea><br>
+<button onclick="addComment()">أرسل الاقتراح</button>
+<ul id="commentsList" style="list-style: none; padding: 0; margin-top: 10px;"></ul>
+
+</section>
+
+<footer>
+<p>&copy; 2025 Premium Services - طرابلس</p>
+</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// تحميل قيم التقييم والتعليقات عند البداية
+window.onload = function() {
+  ['happy','neutral','sad'].forEach(face => {
+    let stored = localStorage.getItem(face + 'Count');
+    if(stored) document.getElementById(face + 'Count').innerText = stored;
+  });
+  let comments = localStorage.getItem('commentsList');
+  if(comments) document.getElementById('commentsList').innerHTML = comments;
+}
+
+function increment(face) {
+  let countSpan = document.getElementById(face + 'Count');
+  let count = parseInt(countSpan.innerText);
+  count++;
+  countSpan.innerText = count;
+  localStorage.setItem(face + 'Count', count);
+}
+
+function addComment() {
+  let nameInput = document.getElementById('customerName');
+  let input = document.getElementById('customerInput');
+  let name = nameInput.value.trim() || "ضيف";
+  let text = input.value.trim();
+  if(text === "") return;
+
+  let li = document.createElement('li');
+  li.style.marginBottom = "10px";
+  li.innerText = name + ": " + text;
+
+  let replyBtn = document.createElement('button');
+  replyBtn.innerText = "رد";
+  replyBtn.style.marginLeft = "10px";
+  replyBtn.onclick = function() {
+    let replyText = prompt("اكتب ردك على الاقتراح:");
+    if(replyText) li.innerText += " — الرد: " + replyText;
+    localStorage.setItem('commentsList', document.getElementById('commentsList').innerHTML);
+  }
+
+  li.appendChild(replyBtn);
+  document.getElementById('commentsList').appendChild(li);
+  input.value = "";
+  localStorage.setItem('commentsList', document.getElementById('commentsList').innerHTML);
+}
+</script>
+
+</body>
+</html>
