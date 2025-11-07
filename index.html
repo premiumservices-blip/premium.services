@@ -12,7 +12,7 @@ body {
   direction: rtl;
   text-align: right;
   background: #f0f0f0;
-  line-height: 1.8; /* مسافات مريحة بين الأسطر */
+  line-height: 1.8;
 }
 
 header {
@@ -60,7 +60,7 @@ header nav a:hover {
 }
 
 main {
-  margin-top: 160px; /* بعد الهيدر */
+  margin-top: 180px; /* لتجنب أكل العناوين خلف الهيدر */
   padding: 0 15px;
 }
 
@@ -76,7 +76,7 @@ section h2,
 section h1,
 section p,
 section ul {
-  margin: 15px 0; /* مسافات واضحة بين الفقرات */
+  margin: 15px 0;
 }
 
 ul {
@@ -127,18 +127,9 @@ button:hover {
   background: #b71c1c;
 }
 
-iframe {
-  width: 100%;
-  max-width: 300px;
-  height: 200px;
-  border: 2px solid #d32f2f;
-  border-radius: 5px;
-  display: block;
-  margin: 10px 0;
-}
-
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 160px; /* يحل مشكلة النصوص المأكولة خلف الهيدر */
 }
 
 .center-fade {
@@ -168,7 +159,6 @@ html {
 
 <header>
   <h1>Premium Services</h1>
-
   <nav>
     <a href="#home">الصفحة الرئيسية / Home</a>
     <a href="#details">تفاصيل الشركة / Company Details</a>
@@ -193,7 +183,6 @@ html {
 <p>📞 <strong>مدير العمليات:</strong> <a href="https://wa.me/96171418383" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:25px;height:25px;"></a></p>
 <p>📞 <strong>المدير المباشر للشركة:</strong> <a href="https://wa.me/9613276605" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:25px;height:25px;"></a></p>
 <p>📍 <strong>العنوان:</strong> طرابلس / شارع فؤاد الملا / جنب مستشفى الملا</p>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.123456789!2d35.842345!3d34.432123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x123456789abcdef%3A0xabcdef123456789!2sشارع%20فؤاد%20الملا%2C%20طرابلس%2C%20لبنان!5e0!3m2!1sar!2sus!4v1699999999999!5m2!1sar!2sus" allowfullscreen="" loading="lazy"></iframe>
 </section>
 
 <!-- تفاصيل الشركة -->
