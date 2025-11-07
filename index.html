@@ -10,10 +10,13 @@ body {
   margin:0; padding:0;
   direction:rtl; text-align:right;
   background:#f0f0f0;
-  font-size:16px;
 }
 header {
   background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
+}
+header h1 { margin:0; font-size:1.5em; }
+header nav {
+  margin-top:10px;
 }
 header nav a {
   color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer;
@@ -22,8 +25,8 @@ header nav a:hover { text-decoration:underline; }
 .social-icons { text-align:center; margin-top:10px; }
 .social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
 
-main { padding-top:140px; } /* مساحة تحت الهيدر */
-section { display:none; padding:20px 15px; line-height:1.6; min-height:calc(100vh - 140px); }
+main { margin-top:120px; padding:15px; }
+section { display:none; }
 section.active { display:block; }
 
 .center-fade {
@@ -33,22 +36,19 @@ section.active { display:block; }
 }
 @keyframes fadeInOut {0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
 
-ul { list-style:none; padding:0; display:inline-block; text-align:right; }
-li { margin:12px 0; font-size:1em; line-height:1.5; }
+ul { list-style:none; padding:0; text-align:right; }
+li { margin:8px 0; font-size:1em; }
 li span { font-weight:bold; margin-left:5px; }
+
 #rating span { cursor:pointer; font-size:1.8em; margin-right:10px; }
 textarea,input[type=text] { width:95%; margin-top:5px; padding:5px; font-size:1em; }
 button { margin-top:5px; padding:8px 12px; cursor:pointer; font-size:1em; }
 
-footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; color:white; margin-top:15px; }
+html { scroll-behavior:smooth; }
 
-/* Responsive للموبايل */
-@media (max-width: 600px) {
-  body { font-size:14px; }
-  section h1, section h2 { font-size:20px; }
-  li { font-size:14px; line-height:1.4; }
+@media (max-width:600px){
+  header h1 { font-size:1.2em; }
   #rating span { font-size:1.5em; }
-  .center-fade { font-size:24px; }
 }
 </style>
 </head>
@@ -57,9 +57,9 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 <header>
 <h1>Premium Services</h1>
 <nav>
-  <a onclick="showSection('home')">الصفحة الرئيسية / Home</a>
-  <a onclick="showSection('details')">تفاصيل الشركة / Company Details</a>
-  <a onclick="showSection('updates')">العروض / Updates</a>
+  <a onclick="showSection('home')">الصفحة الرئيسية</a>
+  <a onclick="showSection('details')">تفاصيل الشركة</a>
+  <a onclick="showSection('updates')">العروض</a>
 </nav>
 <div class="social-icons">
   <a href="https://wa.me/96179338815" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب"></a>
@@ -71,16 +71,13 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 <main>
 <!-- الصفحة الرئيسية -->
 <section id="home" class="active">
-
-<div style="margin-top:10px;">
-<p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
+<p style="margin-top:10px;">نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
 <p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
 <p>🏢 <strong>شركة مسجلة وقانونية:</strong> مرخصة من قبل الحكومة وبلدية طرابلس.</p>
 <p>⏰ خدماتنا 24 ساعة مع جدول زمني مخصص لكل زبون.</p>
 <p>📞 <strong>مدير العمليات:</strong> <a href="https://wa.me/96171418383" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:25px;height:25px;"></a></p>
 <p>📞 <strong>المدير المباشر للشركة:</strong> <a href="https://wa.me/9613276605" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:25px;height:25px;"></a></p>
 <p>📍 <strong>العنوان:</strong> طرابلس / شارع فؤاد الملا / جنب مستشفى الملا</p>
-</div>
 </section>
 
 <!-- تفاصيل الشركة -->
@@ -99,11 +96,14 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 
 <!-- العروض -->
 <section id="updates">
-<h2>العروض والتحديثات / Updates</h2>
+<h2>العروض والتحديثات</h2>
 <p>💸 خصومات عند التزام بالخدمة الشهرية والسنوية</p>
 <p>💰 أسعار الخدمة:</p>
+<ul>
 <li>🏠 تنظيف شامل للبيت → يبدأ من 25$ حسب مساحة المنزل</li>
+</ul>
 <p>🏭 تنظيف المستودعات:</p>
+<ul>
 <li>🧹 تنظيف عادي → 1.5$ لكل متر مربع</li>
 <li>🧹 تنظيف مع نقل الردم أو الأثاث القديم → 2.5$ لكل متر مربع</li>
 </ul>
@@ -125,19 +125,18 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 <ul id="commentsList" style="list-style:none;padding:0;margin-top:10px;"></ul>
 </section>
 
-<footer>
+<footer style="text-align:center;padding:10px;font-size:0.9em;background:#d32f2f;color:white;margin-top:15px;">
 &copy; 2025 Premium Services - طرابلس
 </footer>
 
 <script>
-// للتنقل بين الصفحات
 function showSection(id){
   document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-// تقييم مخزن ومرة واحدة
-window.onload = function(){
+// التقييم مخزن ومرة واحدة
+window.onload=function(){
   ['happy','neutral','sad'].forEach(f=>{
     let stored=localStorage.getItem(f+'Count');
     if(stored) document.getElementById(f+'Count').innerText=stored;
