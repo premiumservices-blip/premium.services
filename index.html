@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[4:43 AM, 11/7/2025] M Youssef: <!DOCTYPE html>
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
@@ -21,10 +21,32 @@ header nav a:hover { text-decoration:underline; }
 .social-icons { text-align:center; margin-top:10px; }
 .social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
 
-main { margin-top:100px; }
+main { padding-top:140px; } /* زيادة المسافة تحت ال…
+[4:46 AM, 11/7/2025] M Youssef: <!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Services</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin:0; padding:0;
+  direction:rtl; text-align:right;
+  background:#f0f0f0;
+}
+header {
+  background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
+}
+header nav a {
+  color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer;
+}
+header nav a:hover { text-decoration:underline; }
+.social-icons { text-align:center; margin-top:10px; }
+.social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
 
-section { padding:20px 15px; display:none; }
-section#home { display:block; } /* الصفحة الرئيسية تظهر تلقائياً */
+main { padding-top:140px; } /* زيادة المسافة تحت العنوان */
+section { display:none; padding:20px 15px; line-height:1.6; }
 section.active { display:block; }
 
 .center-fade {
@@ -62,8 +84,9 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 
 <main>
 <!-- الصفحة الرئيسية -->
-<section id="home">
+<section id="home" class="active">
 <h2>شركة Premium Services</h2>
+<div style="margin-top:10px;">
 <p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
 <p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
 <p>🏢 <strong>شركة مسجلة وقانونية:</strong> مرخصة من قبل الحكومة وبلدية طرابلس.</p>
@@ -71,6 +94,7 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 <p>📞 <strong>مدير العمليات:</strong> <a href="https://wa.me/96171418383" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:25px;height:25px;"></a></p>
 <p>📞 <strong>المدير المباشر للشركة:</strong> <a href="https://wa.me/9613276605" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:25px;height:25px;"></a></p>
 <p>📍 <strong>العنوان:</strong> طرابلس / شارع فؤاد الملا / جنب مستشفى الملا</p>
+</div>
 </section>
 
 <!-- تفاصيل الشركة -->
@@ -147,7 +171,7 @@ function increment(face){
   let countSpan=document.getElementById(face+'Count');
   let count=parseInt(countSpan.innerText)+1;
   countSpan.innerText=count;
-  localStorage.setItem(face+'Count',count);
+  localStorage.setItem(f+'Count',count);
   localStorage.setItem('Voted','true');
   document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
 }
