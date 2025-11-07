@@ -7,174 +7,62 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  direction: rtl;
-  text-align: right;
-  background: #f0f0f0;
-  line-height: 1.8;
+  margin:0; padding:0;
+  direction:rtl; text-align:right;
+  background:#f0f0f0;
 }
-
 header {
-  background: #d32f2f;
-  color: white;
-  padding: 15px 0;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 1.8em;
-}
-
-header nav {
-  margin-top: 10px;
-}
-
 header nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
+  color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer;
 }
+header nav a:hover { text-decoration:underline; }
+.social-icons { text-align:center; margin-top:10px; }
+.social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
 
-header nav a:hover {
-  text-decoration: underline;
-}
+main { margin-top:100px; }
 
-.social-icons {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.social-icons img {
-  width: 30px;
-  height: 30px;
-  margin: 0 5px;
-  vertical-align: middle;
-}
-
-main {
-  margin-top: 180px; /* لتجنب أكل العناوين خلف الهيدر */
-  padding: 0 15px;
-}
-
-section {
-  display: none;
-}
-
-section:target {
-  display: block;
-}
-
-section h2,
-section h1,
-section p,
-section ul {
-  margin: 15px 0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  text-align: right;
-}
-
-li {
-  margin: 10px 0;
-  font-size: 1em;
-}
-
-li span {
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-#rating span {
-  cursor: pointer;
-  font-size: 1.8em;
-  margin-right: 10px;
-}
-
-textarea,
-input[type=text] {
-  width: 95%;
-  margin-top: 5px;
-  padding: 8px;
-  font-size: 1em;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  margin-top: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 1em;
-  background: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-button:hover {
-  background: #b71c1c;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 160px; /* يحل مشكلة النصوص المأكولة خلف الهيدر */
-}
+section { padding:20px 15px; display:none; }
+section#home { display:block; } /* الصفحة الرئيسية تظهر تلقائياً */
+section.active { display:block; }
 
 .center-fade {
-  font-size: 28px;
-  color: #d32f2f;
-  font-weight: bold;
-  margin-bottom: 20px;
-  animation: fadeInOut 1.6s ease-in-out infinite alternate;
-  text-align: center;
+  font-size:32px; color:#d32f2f; font-weight:bold; margin-bottom:20px;
+  animation:fadeInOut 1.6s ease-in-out infinite alternate;
+  text-align:center;
 }
+@keyframes fadeInOut {0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
 
-@keyframes fadeInOut {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-}
+ul { list-style:none; padding:0; display:inline-block; text-align:right; }
+li { margin:12px 0; font-size:1em; line-height:1.5; }
+li span { font-weight:bold; margin-left:5px; }
+#rating span { cursor:pointer; font-size:1.8em; margin-right:10px; }
+textarea,input[type=text] { width:95%; margin-top:5px; padding:5px; font-size:1em; }
+button { margin-top:5px; padding:8px 12px; cursor:pointer; font-size:1em; }
 
-/* Responsive */
-@media (max-width: 600px) {
-  header h1 { font-size: 1.5em; }
-  header nav a { font-size: 0.9em; margin: 0 5px; }
-  #rating span { font-size: 1.5em; }
-}
+footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; color:white; margin-top:15px; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Premium Services</h1>
-  <nav>
-    <a href="#home">الصفحة الرئيسية / Home</a>
-    <a href="#details">تفاصيل الشركة / Company Details</a>
-    <a href="#updates">العروض / Updates</a>
-  </nav>
-
-  <div class="social-icons">
-    <a href="https://wa.me/96179338815" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب"></a>
-    <a href="https://www.facebook.com/share/17Dez7yze4/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="فيسبوك"></a>
-    <a href="http://instagram.com/pre_miumservices" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="إنستغرام"></a>
-  </div>
+<h1>Premium Services</h1>
+<nav>
+  <a onclick="showSection('home')">الصفحة الرئيسية / Home</a>
+  <a onclick="showSection('details')">تفاصيل الشركة / Company Details</a>
+  <a onclick="showSection('updates')">العروض / Updates</a>
+</nav>
+<div class="social-icons">
+  <a href="https://wa.me/96179338815" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب"></a>
+  <a href="https://www.facebook.com/share/17Dez7yze4/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="فيسبوك"></a>
+  <a href="http://instagram.com/pre_miumservices" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="إنستغرام"></a>
+</div>
 </header>
 
 <main>
 <!-- الصفحة الرئيسية -->
-<section id="home" class="active">
+<section id="home">
 <h2>شركة Premium Services</h2>
 <p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
 <p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
@@ -230,19 +118,24 @@ html {
 <ul id="commentsList" style="list-style:none;padding:0;margin-top:10px;"></ul>
 </section>
 
-<footer style="text-align:center;padding:10px;font-size:0.9em;background:#d32f2f;color:white;margin-top:15px;">
+<footer>
 &copy; 2025 Premium Services - طرابلس
 </footer>
 
 <script>
+// للتنقل بين الصفحات
+function showSection(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
 // تقييم مخزن ومرة واحدة
 window.onload = function(){
   ['happy','neutral','sad'].forEach(f=>{
     let stored=localStorage.getItem(f+'Count');
     if(stored) document.getElementById(f+'Count').innerText=stored;
     if(localStorage.getItem('Voted')){
-      document.querySelector(#rating span[onclick*="${f}"]).style.cursor='not-allowed';
-      document.querySelector(#rating span[onclick*="${f}"]).style.opacity='0.6';
+      document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
     }
   });
   let comments=localStorage.getItem('commentsList');
