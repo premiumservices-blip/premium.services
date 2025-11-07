@@ -1,4 +1,4 @@
-[4:43 AM, 11/7/2025] M Youssef: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
@@ -10,6 +10,7 @@ body {
   margin:0; padding:0;
   direction:rtl; text-align:right;
   background:#f0f0f0;
+  font-size:16px;
 }
 header {
   background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
@@ -21,32 +22,8 @@ header nav a:hover { text-decoration:underline; }
 .social-icons { text-align:center; margin-top:10px; }
 .social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
 
-main { padding-top:140px; } /* زيادة المسافة تحت ال…
-[4:46 AM, 11/7/2025] M Youssef: <!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Services</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin:0; padding:0;
-  direction:rtl; text-align:right;
-  background:#f0f0f0;
-}
-header {
-  background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
-}
-header nav a {
-  color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer;
-}
-header nav a:hover { text-decoration:underline; }
-.social-icons { text-align:center; margin-top:10px; }
-.social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
-
-main { padding-top:140px; } /* زيادة المسافة تحت العنوان */
-section { display:none; padding:20px 15px; line-height:1.6; }
+main { padding-top:140px; } /* مساحة تحت الهيدر */
+section { display:none; padding:20px 15px; line-height:1.6; min-height:calc(100vh - 140px); }
 section.active { display:block; }
 
 .center-fade {
@@ -64,6 +41,15 @@ textarea,input[type=text] { width:95%; margin-top:5px; padding:5px; font-size:1e
 button { margin-top:5px; padding:8px 12px; cursor:pointer; font-size:1em; }
 
 footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; color:white; margin-top:15px; }
+
+/* Responsive للموبايل */
+@media (max-width: 600px) {
+  body { font-size:14px; }
+  section h1, section h2 { font-size:20px; }
+  li { font-size:14px; line-height:1.4; }
+  #rating span { font-size:1.5em; }
+  .center-fade { font-size:24px; }
+}
 </style>
 </head>
 <body>
@@ -85,7 +71,7 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 <main>
 <!-- الصفحة الرئيسية -->
 <section id="home" class="active">
-<h2>شركة Premium Services</h2>
+
 <div style="margin-top:10px;">
 <p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
 <p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
@@ -116,11 +102,8 @@ footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; c
 <h2>العروض والتحديثات / Updates</h2>
 <p>💸 خصومات عند التزام بالخدمة الشهرية والسنوية</p>
 <p>💰 أسعار الخدمة:</p>
-<ul>
 <li>🏠 تنظيف شامل للبيت → يبدأ من 25$ حسب مساحة المنزل</li>
-</ul>
 <p>🏭 تنظيف المستودعات:</p>
-<ul>
 <li>🧹 تنظيف عادي → 1.5$ لكل متر مربع</li>
 <li>🧹 تنظيف مع نقل الردم أو الأثاث القديم → 2.5$ لكل متر مربع</li>
 </ul>
@@ -171,7 +154,7 @@ function increment(face){
   let countSpan=document.getElementById(face+'Count');
   let count=parseInt(countSpan.innerText)+1;
   countSpan.innerText=count;
-  localStorage.setItem(f+'Count',count);
+  localStorage.setItem(face+'Count',count);
   localStorage.setItem('Voted','true');
   document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
 }
