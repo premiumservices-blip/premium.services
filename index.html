@@ -15,43 +15,41 @@ header {
   background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
 }
 header nav {
-  display:flex; flex-wrap:wrap; justify-content:center; margin-top:10px;
+  display:flex; justify-content:center; flex-wrap:wrap; margin-top:10px;
 }
 header nav a {
-  color:white; margin:5px 10px; text-decoration:none; font-weight:bold; cursor:pointer;
+  color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer; padding:5px 10px;
 }
 header nav a:hover { text-decoration:underline; }
+
 .social-icons { text-align:center; margin-top:10px; }
 .social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
 
-section { padding:120px 15px 50px; display:none; }
-section.active { display:block; }
+main { margin-top:120px; padding:15px; }
+
+section { display:none; padding:20px 0; }
+section:target { display:block; }
 
 .center-fade {
-  font-size:32px; color:#d32f2f; font-weight:bold; margin-bottom:20px;
+  font-size:28px; color:#d32f2f; font-weight:bold; margin-bottom:20px;
   animation:fadeInOut 1.6s ease-in-out infinite alternate;
   text-align:center;
 }
+
 @keyframes fadeInOut {0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
 
 ul { list-style:none; padding:0; text-align:right; }
-li { margin:8px 0; font-size:1em; }
+li { margin:10px 0; font-size:1em; }
 li span { font-weight:bold; margin-left:5px; }
 
 #rating span { cursor:pointer; font-size:1.8em; margin-right:10px; }
+
 textarea,input[type=text] { width:95%; margin-top:5px; padding:5px; font-size:1em; }
 button { margin-top:5px; padding:8px 12px; cursor:pointer; font-size:1em; }
 
-iframe { width:200px; height:200px; border:2px solid #d32f2f; border-radius:5px; display:block; margin:10px auto; }
-
 html { scroll-behavior:smooth; }
-main { margin-top:100px; }
 
-@media (max-width:600px){
-  .center-fade { font-size:24px; }
-  #rating span { font-size:1.5em; margin-right:5px; }
-  header nav { flex-direction:column; }
-}
+footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; color:white; margin-top:15px; }
 </style>
 </head>
 <body>
@@ -59,9 +57,9 @@ main { margin-top:100px; }
 <header>
 <h1>Premium Services</h1>
 <nav>
-  <a onclick="showSection('home')">الصفحة الرئيسية</a>
-  <a onclick="showSection('details')">تفاصيل الشركة</a>
-  <a onclick="showSection('updates')">العروض</a>
+  <a href="#home">الصفحة الرئيسية</a>
+  <a href="#details">تفاصيل الشركة</a>
+  <a href="#updates">العروض</a>
 </nav>
 <div class="social-icons">
   <a href="https://wa.me/96179338815" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب"></a>
@@ -73,7 +71,8 @@ main { margin-top:100px; }
 <main>
 <!-- الصفحة الرئيسية -->
 <section id="home">
-<h2>شركة Premium Services</h2>
+<
+<
 <p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
 <p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
 <p>🏢 <strong>شركة مسجلة وقانونية:</strong> مرخصة من قبل الحكومة وبلدية طرابلس.</p>
@@ -85,6 +84,8 @@ main { margin-top:100px; }
 
 <!-- تفاصيل الشركة -->
 <section id="details">
+<
+<
 <h1 class="center-fade">Premium Services</h1>
 <ul>
 <li>🧹 <span>تنظيف البلاط المتصدئ:</span> إزالة الصدأ والبقع الصعبة واستعادة نظافة البلاط.</li>
@@ -99,7 +100,9 @@ main { margin-top:100px; }
 
 <!-- العروض -->
 <section id="updates">
-<h2>العروض والتحديثات</h2>
+<
+<
+<
 <p>💸 خصومات عند التزام بالخدمة الشهرية والسنوية</p>
 <p>💰 أسعار الخدمة:</p>
 <ul>
@@ -114,13 +117,15 @@ main { margin-top:100px; }
 <p>🧼 تنظيف السجاد: يبدأ من 1.5$ لكل متر مربع حسب السجادة</p>
 <p>🛋️ تنظيف وتعقيم الفرش بالبخار: يبدأ من 10$ حسب كمية الفرش</p>
 
+<!-- تقييم الزبون -->
 <p>📝 تقييم الزبون:</p>
 <div id="rating">
-<span onclick="increment('happy')">🙂 <span id="happyCount">0</span></span>
-<span onclick="increment('neutral')">😐 <span id="neutralCount">0</span></span>
-<span onclick="increment('sad')">☹️ <span id="sadCount">0</span></span>
+<span onclick="increment('happy')">😁<span id="happyCount">0</span></span>
+<span onclick="increment('neutral')">☹️<span id="neutralCount">0</span></span>
+<span onclick="increment('sad')">😞<span id="sadCount">0</span></span>
 </div>
 
+<!-- اقتراحات الزبائن -->
 <p>💬 اقتراحات الزبائن:</p>
 <input type="text" id="customerName" placeholder="اسمك"><br>
 <textarea id="customerInput" rows="3" placeholder="اكتب اقتراحك هنا..."></textarea><br>
@@ -128,52 +133,70 @@ main { margin-top:100px; }
 <ul id="commentsList" style="list-style:none;padding:0;margin-top:10px;"></ul>
 </section>
 
-<footer style="text-align:center;padding:10px;font-size:0.9em;background:#d32f2f;color:white;margin-top:15px;">
+</main>
+
+<footer>
 &copy; 2025 Premium Services - طرابلس
 </footer>
 
+<!-- Firebase + التقييم والتعليقات -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
-// النقل بين الصفحات
-function showSection(id){
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyArPTzbpPi-WQwc0_caEBdIqYktfDWLaIc",
+  authDomain: "premium-services-1.firebaseapp.com",
+  databaseURL: "https://premium-services-1-default-rtdb.firebaseio.com",
+  projectId: "premium-services-1",
+  storageBucket: "premium-services-1.appspot.com",
+  messagingSenderId: "295656475073",
+  appId: "1:295656475073:web:c3e4b579291b35c6168740"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
-// تقييم مخزن ومرة واحدة
-window.onload = function(){
-  ['happy','neutral','sad'].forEach(f=>{
-    let stored=localStorage.getItem(f+'Count');
-    if(stored) document.getElementById(f+'Count').innerText=stored;
-    if(localStorage.getItem('Voted')){
-      document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
+// تقييم بنجوم مرة واحدة
+window.onload = function() {
+  db.ref('ratings').once('value', snap=>{
+    if(snap.exists()){
+      const data = snap.val();
+      document.getElementById('happyCount').innerText=data.happy||0;
+      document.getElementById('neutralCount').innerText=data.neutral||0;
+      document.getElementById('sadCount').innerText=data.sad||0;
     }
   });
-  let comments=localStorage.getItem('commentsList');
-  if(comments) document.getElementById('commentsList').innerHTML=comments;
+  db.ref('comments').once('value', snap=>{
+    if(snap.exists()){
+      const data = snap.val();
+      const list = document.getElementById('commentsList');
+      for(const key in data){
+        let li = document.createElement('li');
+        li.innerText=data[key].name + ": " + data[key].text;
+        list.appendChild(li);
+      }
+    }
+  });
 }
 
 function increment(face){
   if(localStorage.getItem('Voted')) return;
-  let countSpan=document.getElementById(face+'Count');
-  let count=parseInt(countSpan.innerText)+1;
+  const countSpan = document.getElementById(face+'Count');
+  let count = parseInt(countSpan.innerText)+1;
   countSpan.innerText=count;
-  localStorage.setItem(face+'Count',count);
   localStorage.setItem('Voted','true');
-  document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
+  // تخزين في Firebase
+  db.ref('ratings/'+face).set(count);
 }
 
 function addComment(){
   let name=document.getElementById('customerName').value.trim()||'ضيف';
   let text=document.getElementById('customerInput').value.trim();
   if(!text) return;
-  let li=document.createElement('li'); li.style.marginBottom='10px';
-  li.innerText=name+": "+text;
-  let replyBtn=document.createElement('button'); replyBtn.innerText='رد'; replyBtn.style.marginLeft='10px';
-  replyBtn.onclick=function(){ let r=prompt('اكتب ردك على الاقتراح:'); if(r) li.innerText+=' — الرد: '+r; localStorage.setItem('commentsList',document.getElementById('commentsList').innerHTML);}
-  li.appendChild(replyBtn);
+  const newKey = db.ref('comments').push().key;
+  db.ref('comments/'+newKey).set({name,text});
+  let li=document.createElement('li'); li.innerText=name+": "+text;
   document.getElementById('commentsList').appendChild(li);
   document.getElementById('customerInput').value='';
-  localStorage.setItem('commentsList',document.getElementById('commentsList').innerHTML);
 }
 </script>
 
