@@ -7,69 +7,166 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  margin:0; padding:0;
-  direction:rtl; text-align:right;
-  background:#f0f0f0;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+  background: #f0f0f0;
+  line-height: 1.8; /* مسافات مريحة بين الأسطر */
 }
+
 header {
-  background:#d32f2f; color:white; padding:15px 0; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
+  background: #d32f2f;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
+
 header h1 {
-  margin:0; font-size:1.8em; text-align:center;
+  margin: 0;
+  font-size: 1.8em;
 }
+
+header nav {
+  margin-top: 10px;
+}
+
 header nav a {
-  color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer;
-}
-header nav a:hover { text-decoration:underline; }
-.social-icons { text-align:center; margin-top:10px; }
-.social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
-
-header img.logo {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:50px; height:50px;
-}
-header img.logo-left { left:10px; }
-header img.logo-right { right:10px; }
-
-main { 
-  margin-top:140px; /* بعد الهيدر */
-  padding:0 15px;
-  line-height:1.8; /* مسافة بين الأسطر */
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-section { display:none; }
-section:target { display:block; }
-
-section h2, section h1, section p, section ul {
-  margin:10px 0; /* مسافة فوق وتحت */
+header nav a:hover {
+  text-decoration: underline;
 }
 
-ul { list-style:none; padding:0; text-align:right; }
-li { margin:8px 0; font-size:1em; }
-li span { font-weight:bold; margin-left:5px; }
-#rating span { cursor:pointer; font-size:1.8em; margin-right:10px; }
-textarea,input[type=text] { width:95%; margin-top:5px; padding:5px; font-size:1em; }
-button { margin-top:5px; padding:8px 12px; cursor:pointer; font-size:1em; }
-iframe { width:200px; height:200px; border:2px solid #d32f2f; border-radius:5px; display:block; margin:10px 0; }
-html { scroll-behavior:smooth; }
+.social-icons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+main {
+  margin-top: 160px; /* بعد الهيدر */
+  padding: 0 15px;
+}
+
+section {
+  display: none;
+}
+
+section:target {
+  display: block;
+}
+
+section h2,
+section h1,
+section p,
+section ul {
+  margin: 15px 0; /* مسافات واضحة بين الفقرات */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+li {
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+li span {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+#rating span {
+  cursor: pointer;
+  font-size: 1.8em;
+  margin-right: 10px;
+}
+
+textarea,
+input[type=text] {
+  width: 95%;
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1em;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #b71c1c;
+}
+
+iframe {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  border: 2px solid #d32f2f;
+  border-radius: 5px;
+  display: block;
+  margin: 10px 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .center-fade {
-  font-size:32px; color:#d32f2f; font-weight:bold; margin-bottom:20px;
-  animation:fadeInOut 1.6s ease-in-out infinite alternate;
-  text-align:center;
+  font-size: 28px;
+  color: #d32f2f;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeInOut 1.6s ease-in-out infinite alternate;
+  text-align: center;
 }
-@keyframes fadeInOut {0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5em; }
+  header nav a { font-size: 0.9em; margin: 0 5px; }
+  #rating span { font-size: 1.5em; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <!-- شعار على الشمال -->
-  <img src="MSA.jpg" alt="شعار" class="logo logo-left">
-  <!-- شعار على اليمين -->
-  <img src="MSA.jpg" alt="شعار" class="logo logo-right">
-
   <h1>Premium Services</h1>
 
   <nav>
@@ -88,6 +185,7 @@ html { scroll-behavior:smooth; }
 <main>
 <!-- الصفحة الرئيسية -->
 <section id="home" class="active">
+<h2>شركة Premium Services</h2>
 <p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
 <p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
 <p>🏢 <strong>شركة مسجلة وقانونية:</strong> مرخصة من قبل الحكومة وبلدية طرابلس.</p>
