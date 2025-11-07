@@ -5,61 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Services</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin:0; padding:0;
-  direction:rtl; text-align:right;
-  background:#f0f0f0;
-}
-header {
-  background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
-}
-header h1 { margin:0; font-size:1.5em; }
-header nav {
-  margin-top:10px;
-}
-header nav a {
-  color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer;
-}
+body { font-family: Arial,sans-serif; margin:0; padding:0; direction:rtl; text-align:right; background:#f0f0f0; }
+header { background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000; }
+header nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer; }
 header nav a:hover { text-decoration:underline; }
 .social-icons { text-align:center; margin-top:10px; }
 .social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
-
-main { margin-top:120px; padding:15px; }
-section { display:none; }
-section.active { display:block; }
-
-.center-fade {
-  font-size:32px; color:#d32f2f; font-weight:bold; margin-bottom:20px;
-  animation:fadeInOut 1.6s ease-in-out infinite alternate;
-  text-align:center;
-}
+section { padding:100px 15px 50px; display:none; }
+section:target { display:block; }
+.center-fade { font-size:32px; color:#d32f2f; font-weight:bold; margin-bottom:20px; animation:fadeInOut 1.6s ease-in-out infinite alternate; text-align:center; }
 @keyframes fadeInOut {0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
-
-ul { list-style:none; padding:0; text-align:right; }
+ul { list-style:none; padding:0; display:inline-block; text-align:right; }
 li { margin:8px 0; font-size:1em; }
 li span { font-weight:bold; margin-left:5px; }
-
 #rating span { cursor:pointer; font-size:1.8em; margin-right:10px; }
 textarea,input[type=text] { width:95%; margin-top:5px; padding:5px; font-size:1em; }
 button { margin-top:5px; padding:8px 12px; cursor:pointer; font-size:1em; }
-
 html { scroll-behavior:smooth; }
-
-@media (max-width:600px){
-  header h1 { font-size:1.2em; }
-  #rating span { font-size:1.5em; }
-}
+main { margin-top:100px; }
 </style>
+<!-- Firebase -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyArPTzbpPi-WQwc0_caEBdIqYktfDWLaIc",
+  authDomain: "premium-services-1.firebaseapp.com",
+  databaseURL: "https://premium-services-1-default-rtdb.firebaseio.com",
+  projectId: "premium-services-1",
+  storageBucket: "premium-services-1.appspot.com",
+  messagingSenderId: "295656475073",
+  appId: "1:295656475073:web:c3e4b579291b35c6168740",
+  measurementId: "G-J8YCKB4NBN"
+};
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+</script>
 </head>
 <body>
 
 <header>
 <h1>Premium Services</h1>
 <nav>
-  <a onclick="showSection('home')">الصفحة الرئيسية</a>
-  <a onclick="showSection('details')">تفاصيل الشركة</a>
-  <a onclick="showSection('updates')">العروض</a>
+  <a href="#home">الصفحة الرئيسية</a>
+  <a href="#details">تفاصيل الشركة</a>
+  <a href="#updates">العروض</a>
 </nav>
 <div class="social-icons">
   <a href="https://wa.me/96179338815" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب"></a>
@@ -69,9 +60,9 @@ html { scroll-behavior:smooth; }
 </header>
 
 <main>
-<!-- الصفحة الرئيسية -->
 <section id="home" class="active">
-<p style="margin-top:10px;">نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
+<h2>شركة Premium Services</h2>
+<p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
 <p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
 <p>🏢 <strong>شركة مسجلة وقانونية:</strong> مرخصة من قبل الحكومة وبلدية طرابلس.</p>
 <p>⏰ خدماتنا 24 ساعة مع جدول زمني مخصص لكل زبون.</p>
@@ -80,7 +71,6 @@ html { scroll-behavior:smooth; }
 <p>📍 <strong>العنوان:</strong> طرابلس / شارع فؤاد الملا / جنب مستشفى الملا</p>
 </section>
 
-<!-- تفاصيل الشركة -->
 <section id="details">
 <h1 class="center-fade">Premium Services</h1>
 <ul>
@@ -94,22 +84,17 @@ html { scroll-behavior:smooth; }
 </ul>
 </section>
 
-<!-- العروض -->
 <section id="updates">
 <h2>العروض والتحديثات</h2>
 <p>💸 خصومات عند التزام بالخدمة الشهرية والسنوية</p>
 <p>💰 أسعار الخدمة:</p>
 <ul>
 <li>🏠 تنظيف شامل للبيت → يبدأ من 25$ حسب مساحة المنزل</li>
+<li>🏭 تنظيف المستودعات → تنظيف عادي: 1.5$ لكل متر مربع</li>
+<li>☀️ تنظيف الطاقة الشمسية: 🔆 تبدأ من 20$ حسب عدد ألواح الطاقة</li>
+<li>🧼 تنظيف السجاد: يبدأ من 1.5$ لكل متر مربع حسب السجادة</li>
+<li>🛋️ تنظيف وتعقيم الفرش بالبخار: يبدأ من 10$ حسب كمية الفرش</li>
 </ul>
-<p>🏭 تنظيف المستودعات:</p>
-<ul>
-<li>🧹 تنظيف عادي → 1.5$ لكل متر مربع</li>
-<li>🧹 تنظيف مع نقل الردم أو الأثاث القديم → 2.5$ لكل متر مربع</li>
-</ul>
-<p>☀️ تنظيف الطاقة الشمسية: 🔆 تبدأ من 20$ حسب عدد ألواح الطاقة وحسب ارتفاعها</p>
-<p>🧼 تنظيف السجاد: يبدأ من 1.5$ لكل متر مربع حسب السجادة</p>
-<p>🛋️ تنظيف وتعقيم الفرش بالبخار: يبدأ من 10$ حسب كمية الفرش</p>
 
 <p>📝 تقييم الزبون:</p>
 <div id="rating">
@@ -129,47 +114,62 @@ html { scroll-behavior:smooth; }
 &copy; 2025 Premium Services - طرابلس
 </footer>
 
-<script>
-function showSection(id){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+<script type="module">
+// Firebase + التعليقات
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+const db = getDatabase();
+
+// تحميل التعليقات الحية
+const commentsRef = ref(db, 'comments');
+onValue(commentsRef, (snapshot) => {
+  const list = document.getElementById('commentsList');
+  list.innerHTML = '';
+  snapshot.forEach(item => {
+    const data = item.val();
+    const li = document.createElement('li');
+    li.style.marginBottom='10px';
+    li.innerText = data.name + ": " + data.text;
+    const replyBtn = document.createElement('button');
+    replyBtn.innerText='رد'; replyBtn.style.marginLeft='10px';
+    replyBtn.onclick=function(){ 
+      let r=prompt('اكتب ردك على الاقتراح:'); 
+      if(r) li.innerText+=' — الرد: '+r;
+      // تحديث في Firebase
+      push(ref(db, 'comments'), {name:data.name,text:data.text + " — الرد: "+r});
+    }
+    li.appendChild(replyBtn);
+    list.appendChild(li);
+  });
+});
+
+// إرسال التعليقات
+function addComment(){
+  const name=document.getElementById('customerName').value.trim()||'ضيف';
+  const text=document.getElementById('customerInput').value.trim();
+  if(!text) return;
+  push(ref(db,'comments'),{name,text});
+  document.getElementById('customerInput').value='';
 }
 
-// التقييم مخزن ومرة واحدة
-window.onload=function(){
-  ['happy','neutral','sad'].forEach(f=>{
-    let stored=localStorage.getItem(f+'Count');
-    if(stored) document.getElementById(f+'Count').innerText=stored;
-    if(localStorage.getItem('Voted')){
-      document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
-    }
-  });
-  let comments=localStorage.getItem('commentsList');
-  if(comments) document.getElementById('commentsList').innerHTML=comments;
-}
+// تقييم مخزن ومرة واحدة
+['happy','neutral','sad'].forEach(f=>{
+  const el=document.getElementById(f+'Count');
+  const votedKey='Voted';
+  if(localStorage.getItem(votedKey)){
+    document.querySelector(#rating span[onclick*="${f}"]).style.cursor='not-allowed';
+    document.querySelector(#rating span[onclick*="${f}"]).style.opacity='0.6';
+  }
+});
 
 function increment(face){
-  if(localStorage.getItem('Voted')) return;
+  const votedKey='Voted';
+  if(localStorage.getItem(votedKey)) return;
   let countSpan=document.getElementById(face+'Count');
   let count=parseInt(countSpan.innerText)+1;
   countSpan.innerText=count;
   localStorage.setItem(face+'Count',count);
-  localStorage.setItem('Voted','true');
+  localStorage.setItem(votedKey,'true');
   document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
-}
-
-function addComment(){
-  let name=document.getElementById('customerName').value.trim()||'ضيف';
-  let text=document.getElementById('customerInput').value.trim();
-  if(!text) return;
-  let li=document.createElement('li'); li.style.marginBottom='10px';
-  li.innerText=name+": "+text;
-  let replyBtn=document.createElement('button'); replyBtn.innerText='رد'; replyBtn.style.marginLeft='10px';
-  replyBtn.onclick=function(){ let r=prompt('اكتب ردك على الاقتراح:'); if(r) li.innerText+=' — الرد: '+r; localStorage.setItem('commentsList',document.getElementById('commentsList').innerHTML);}
-  li.appendChild(replyBtn);
-  document.getElementById('commentsList').appendChild(li);
-  document.getElementById('customerInput').value='';
-  localStorage.setItem('commentsList',document.getElementById('commentsList').innerHTML);
 }
 </script>
 
