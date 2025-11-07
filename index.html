@@ -5,47 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Services</title>
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin:0; padding:0;
-  direction:rtl; text-align:right;
-  background:#f0f0f0;
-}
-header {
-  background:#d32f2f; color:white; padding:15px; text-align:center; position:fixed; width:100%; top:0; z-index:1000;
-}
-header nav a {
-  color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer;
-}
+body { font-family: Arial,sans-serif; margin:0; padding:0; direction:rtl; text-align:right; background:#f0f0f0; }
+header { background:#d32f2f; color:white; padding:15px 0 60px; text-align:center; position:fixed; width:100%; top:0; z-index:1000; }
+header nav { display:flex; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+header nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; cursor:pointer; }
 header nav a:hover { text-decoration:underline; }
 .social-icons { text-align:center; margin-top:10px; }
 .social-icons img { width:30px; height:30px; margin:0 5px; vertical-align:middle; }
-
-section { padding:120px 15px 50px; display:none; }
+main { margin-top:150px; padding:15px; }
+section { display:none; padding:10px 0; }
 section.active { display:block; }
-
+h1,h2 { margin-bottom:15px; }
 ul { list-style:none; padding:0; text-align:right; }
 li { margin:8px 0; font-size:1em; }
-li span { font-weight:bold; margin-left:5px; }
-
 #rating span { cursor:pointer; font-size:1.8em; margin-right:10px; }
-
 textarea,input[type=text] { width:95%; margin-top:5px; padding:5px; font-size:1em; }
 button { margin-top:5px; padding:8px 12px; cursor:pointer; font-size:1em; }
-
-html { scroll-behavior:smooth; }
-main { margin-top:100px; }
-
-/* إيموجي لكل عنصر */
-li::before { content: attr(data-emoji); margin-left:5px; }
-
-.center-fade {
-  font-size:32px; color:#d32f2f; font-weight:bold; margin-bottom:20px;
-  animation:fadeInOut 1.6s ease-in-out infinite alternate;
-  text-align:center;
-}
-@keyframes fadeInOut {0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
+.footer { text-align:center; padding:10px; font-size:0.9em; background:#d32f2f; color:white; margin-top:15px; }
 </style>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+// إعداد Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyArPTzbpPi-WQwc0_caEBdIqYktfDWLaIc",
+  authDomain: "premium-services-1.firebaseapp.com",
+  projectId: "premium-services-1",
+  storageBucket: "premium-services-1.appspot.com",
+  messagingSenderId: "295656475073",
+  appId: "1:295656475073:web:c3e4b579291b35c6168740",
+  measurementId: "G-J8YCKB4NBN"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+</script>
 </head>
 <body>
 
@@ -57,18 +53,21 @@ li::before { content: attr(data-emoji); margin-left:5px; }
   <a onclick="showSection('updates')">العروض</a>
 </nav>
 <div class="social-icons">
-  <a href="https://wa.me/96179338815" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب"></a>
-  <a href="https://www.facebook.com/share/17Dez7yze4/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="فيسبوك"></a>
-  <a href="http://instagram.com/pre_miumservices" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="إنستغرام"></a>
+  <a href="https://wa.me/96179338815" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></a>
+  <a href="https://www.facebook.com/share/17Dez7yze4/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"></a>
+  <a href="http://instagram.com/pre_miumservices" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"></a>
 </div>
 </header>
 
 <main>
 <!-- الصفحة الرئيسية -->
 <section id="home" class="active">
-<h2>شركة Premium Services</h2>
-<p>نقدم في <strong>Premium Services</strong> حلولًا شاملة في مجال الخدمات العامة مع فريق عمل محترف.</p>
-<p>هدفنا هو توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
+<
+<
+<
+<
+<h2>نقدم في Premium Services حلولًا شاملة في مجال الخدمات العامة مع فريق محترف.</h2>
+<p>هدفنا توفير راحة بالك وخدمة راقية تعكس اسمنا <strong>Premium</strong> في كل تفصيل.</p>
 <p>🏢 <strong>شركة مسجلة وقانونية:</strong> مرخصة من قبل الحكومة وبلدية طرابلس.</p>
 <p>⏰ خدماتنا 24 ساعة مع جدول زمني مخصص لكل زبون.</p>
 <p>📞 <strong>مدير العمليات:</strong> <a href="https://wa.me/96171418383" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:25px;height:25px;"></a></p>
@@ -78,33 +77,35 @@ li::before { content: attr(data-emoji); margin-left:5px; }
 
 <!-- تفاصيل الشركة -->
 <section id="details">
-<h1 class="center-fade">Premium Services</h1>
+<
+<
+<
+<h1 style="text-align:center; color:#d32f2f;">Premium Services</h1>
 <ul>
-<li data-emoji="🧹"><span>تنظيف البلاط المتصدئ:</span> إزالة الصدأ والبقع الصعبة واستعادة نظافة البلاط.</li>
-<li data-emoji="🧼"><span>تنظيف السجاد:</span> إزالة البقع والأتربة باستخدام طرق حديثة وآمنة.</li>
-<li data-emoji="🪟"><span>تنظيف المينيوم:</span> تنظيف نوافذ وأبواب المينيوم كالزجاج تمامًا.</li>
-<li data-emoji="☀️"><span>تنظيف الطاقة الشمسية:</span> تنظيف الألواح الشمسية وإزالة الغبار لتحسين الأداء.</li>
-<li data-emoji="🦟"><span>رش المبيدات:</span> مكافحة الحشرات بطريقة آمنة وفعالة.</li>
-<li data-emoji="🌿"><span>تعشيب وقص الحدائق:</span> تنسيق الحدائق والعناية بالنباتات لتصبح المساحات خضراء وجميلة.</li>
-<li data-emoji="🛋️"><span>تعقيم وتنظيف المفروشات:</span> تنظيف شامل وتعقيم جميع أنواع المفروشات لضمان بيئة صحية وآمنة.</li>
+<li>🧹 تنظيف البلاط المتصدئ: إزالة الصدأ والبقع الصعبة واستعادة نظافة البلاط.</li>
+<li>🧼 تنظيف السجاد: إزالة البقع والأتربة باستخدام طرق حديثة وآمنة.</li>
+<li>🪟 تنظيف المينيوم: تنظيف نوافذ وأبواب المينيوم كالزجاج تمامًا.</li>
+<li>☀️ تنظيف الطاقة الشمسية: تنظيف الألواح الشمسية وإزالة الغبار لتحسين الأداء.</li>
+<li>🦟 رش المبيدات: مكافحة الحشرات بطريقة آمنة وفعالة.</li>
+<li>🌿 تعشيب وقص الحدائق: تنسيق الحدائق والعناية بالنباتات لتصبح المساحات خضراء وجميلة.</li>
+<li>🛋️ تعقيم وتنظيف المفروشات: تنظيف شامل وتعقيم جميع أنواع المفروشات لضمان بيئة صحية وآمنة.</li>
 </ul>
 </section>
 
 <!-- العروض -->
 <section id="updates">
+<
+<
+<
 <h2>العروض والتحديثات</h2>
 <p>💸 خصومات عند التزام بالخدمة الشهرية والسنوية</p>
 <p>💰 أسعار الخدمة:</p>
 <ul>
-<li data-emoji="🏠">تنظيف شامل للبيت → يبدأ من 25$ حسب مساحة المنزل</li>
-<li data-emoji="🏭">تنظيف المستودعات:</li>
-<ul>
-<li data-emoji="🧹">تنظيف عادي → 1.5$ لكل متر مربع</li>
-<li data-emoji="🧹">تنظيف مع نقل الردم أو الأثاث القديم → 2.5$ لكل متر مربع</li>
-</ul>
-<li data-emoji="☀️">تنظيف الطاقة الشمسية → تبدأ من 20$ حسب عدد الألواح وارتفاعها</li>
-<li data-emoji="🧼">تنظيف السجاد → يبدأ من 1.5$ لكل متر مربع حسب السجادة</li>
-<li data-emoji="🛋️">تنظيف وتعقيم الفرش بالبخار → يبدأ من 10$ حسب كمية الفرش</li>
+<li>🏠 تنظيف شامل للبيت → يبدأ من 25$ حسب مساحة المنزل</li>
+<li>🏭 تنظيف المستودعات: تنظيف عادي → 1.5$ لكل متر مربع، تنظيف مع نقل الأثاث أو الردم → 2.5$ لكل متر مربع</li>
+<li>☀️ تنظيف الطاقة الشمسية: تبدأ من 20$ حسب عدد الألواح وارتفاعها</li>
+<li>🧼 تنظيف السجاد: يبدأ من 1.5$ لكل متر مربع</li>
+<li>🛋️ تنظيف وتعقيم الفرش بالبخار: يبدأ من 10$ حسب كمية الفرش</li>
 </ul>
 
 <p>📝 تقييم الزبون:</p>
@@ -121,52 +122,52 @@ li::before { content: attr(data-emoji); margin-left:5px; }
 <ul id="commentsList" style="list-style:none;padding:0;margin-top:10px;"></ul>
 </section>
 
-<footer style="text-align:center;padding:10px;font-size:0.9em;background:#d32f2f;color:white;margin-top:15px;">
-&copy; 2025 Premium Services - طرابلس
-</footer>
+</main>
+
+<footer class="footer">&copy; 2025 Premium Services - طرابلس</footer>
 
 <script>
 function showSection(id){
-  document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-// تقييم مخزن ومرة واحدة
-window.onload=function(){
-  ['happy','neutral','sad'].forEach(f=>{
-    let stored=localStorage.getItem(f+'Count');
-    if(stored) document.getElementById(f+'Count').innerText=stored;
-    if(localStorage.getItem('Voted')){
-      document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
-    }
-  });
-  let comments=localStorage.getItem('commentsList');
-  if(comments) document.getElementById('commentsList').innerHTML=comments;
-}
-
+// تقييم النجوم + تخزين Firebase
 function increment(face){
-  if(localStorage.getItem('Voted')) return;
-  let countSpan=document.getElementById(face+'Count');
-  let count=parseInt(countSpan.innerText)+1;
-  countSpan.innerText=count;
-  localStorage.setItem(face+'Count',count);
-  localStorage.setItem('Voted','true');
+  const voted = sessionStorage.getItem('Voted');
+  if(voted) return;
+  const span = document.getElementById(face+'Count');
+  let count = parseInt(span.innerText)+1;
+  span.innerText = count;
+  db.collection("ratings").add({face:face, value:1});
+  sessionStorage.setItem('Voted','true');
   document.querySelectorAll('#rating span').forEach(s=>{s.style.cursor='not-allowed'; s.style.opacity='0.6';});
 }
 
+// حفظ التعليقات في Firebase
 function addComment(){
-  let name=document.getElementById('customerName').value.trim()||'ضيف';
-  let text=document.getElementById('customerInput').value.trim();
+  const name = document.getElementById('customerName').value.trim() || 'ضيف';
+  const text = document.getElementById('customerInput').value.trim();
   if(!text) return;
-  let li=document.createElement('li'); li.style.marginBottom='10px';
-  li.innerText=name+": "+text;
-  let replyBtn=document.createElement('button'); replyBtn.innerText='رد'; replyBtn.style.marginLeft='10px';
-  replyBtn.onclick=function(){ let r=prompt('اكتب ردك على الاقتراح:'); if(r) li.innerText+=' — الرد: '+r; localStorage.setItem('commentsList',document.getElementById('commentsList').innerHTML);}
-  li.appendChild(replyBtn);
-  document.getElementById('commentsList').appendChild(li);
-  document.getElementById('customerInput').value='';
-  localStorage.setItem('commentsList',document.getElementById('commentsList').innerHTML);
+  db.collection("comments").add({name:name,text:text,timestamp:firebase.firestore.FieldValue.serverTimestamp()})
+  .then(()=>{ document.getElementById('customerInput').value=''; loadComments(); });
 }
+
+// تحميل التعليقات
+function loadComments(){
+  const list=document.getElementById('commentsList');
+  list.innerHTML='';
+  db.collection("comments").orderBy("timestamp","asc").get()
+  .then(snapshot=>{
+    snapshot.forEach(doc=>{
+      const li=document.createElement('li');
+      li.textContent=doc.data().name+": "+doc.data().text;
+      list.appendChild(li);
+    });
+  });
+}
+
+window.onload = loadComments;
 </script>
 
 </body>
